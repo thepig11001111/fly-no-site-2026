@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLY-NO — Browse Available Materials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="sr-only" style="position:absolute;top:0;left:0;z-index:999;padding:1rem;background:var(--color-primary);color:white;">Skip to content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="FLY-NO Home">
+        <img src="./assets/logo.jpg" alt="FLY-NO logo" width="120" height="40">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="buy.html" class="active">Buy</a></li>
+        <li><a href="drive.html">Drive</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button data-theme-toggle aria-label="Switch to dark mode" class="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="sell.html">Sell</a>
+    <a href="buy.html">Buy</a>
+    <a href="drive.html">Drive</a>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Browse Available Materials</h1>
+        <p>Find what you need from local sellers across Devon.</p>
+      </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section style="padding-bottom:var(--space-6);">
+      <div class="container">
+        <div class="search-bar">
+          <div class="search-input-wrap">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" placeholder="Search materials, items, locations..." aria-label="Search materials">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Layout -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="buy-layout">
+          <!-- LEFT: Filter Sidebar -->
+          <aside class="filter-sidebar reveal" aria-label="Filters">
+            <div class="filter-group">
+              <h4>Category</h4>
+              <label class="filter-check"><input type="checkbox" checked> White Goods</label>
+              <label class="filter-check"><input type="checkbox" checked> Furniture</label>
+              <label class="filter-check"><input type="checkbox"> Pallets</label>
+              <label class="filter-check"><input type="checkbox"> Construction</label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Location Radius</h4>
+              <input type="range" min="1" max="30" value="15" aria-label="Location radius">
+              <div class="range-label"><span>1 mi</span><span>15 miles</span><span>30 mi</span></div>
+            </div>
+
+            <div class="filter-group">
+              <h4>Condition</h4>
+              <div class="toggle-group">
+                <button class="toggle-btn active">Any</button>
+                <button class="toggle-btn">Broken</button>
+                <button class="toggle-btn">Functional</button>
+              </div>
+            </div>
+
+            <div class="pricing-note">
+              <strong>Pricing Units</strong><br>
+              White Goods: per item<br>
+              Furniture: per item<br>
+              Pallets: per pallet<br>
+              Materials: per kg
+            </div>
+          </aside>
+
+          <!-- CENTER: Product Grid -->
+          <div>
+            <div class="product-grid">
+              <!-- Product 1 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-red">Broken</span>
+                </div>
+                <div class="product-info">
+                  <h4>Broken Washing Machine</h4>
+                  <div class="product-meta"><span>Exeter, 5 mi</span></div>
+                  <div class="product-price">&pound;15</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-green">Functional</span>
+                </div>
+                <div class="product-info">
+                  <h4>Old Oak Table</h4>
+                  <div class="product-meta"><span>Exmouth, 8 mi</span></div>
+                  <div class="product-price">&pound;35</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-green">Functional</span>
+                </div>
+                <div class="product-info">
+                  <h4>Wooden Pallets (x10)</h4>
+                  <div class="product-meta"><span>Newton Abbot, 12 mi</span></div>
+                  <div class="product-price">&pound;28</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+
+              <!-- Product 4 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-red">Broken</span>
+                </div>
+                <div class="product-info">
+                  <h4>Broken Fridge Freezer</h4>
+                  <div class="product-meta"><span>Topsham, 3 mi</span></div>
+                  <div class="product-price">&pound;10</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-orange">Worn</span>
+                </div>
+                <div class="product-info">
+                  <h4>Worn Sofa (3-seater)</h4>
+                  <div class="product-meta"><span>Crediton, 10 mi</span></div>
+                  <div class="product-price">&pound;20</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="product-card reveal">
+                <div class="product-img">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+                  <span class="product-badge badge badge-green">Functional</span>
+                </div>
+                <div class="product-info">
+                  <h4>Plywood Offcuts</h4>
+                  <div class="product-meta"><span>Exeter, 2 mi</span></div>
+                  <div class="product-price">&pound;8</div>
+                  <a href="#" class="btn btn-primary btn-sm" style="width:100%;">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Price Trends -->
+          <aside class="trends-panel reveal">
+            <h3>Price Trends</h3>
+            <p class="trends-subtitle">StockX-style price history</p>
+
+            <div class="chart-container">
+              <p style="font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);margin-bottom:var(--space-2);">Broken Washing Machines (Devon)</p>
+              <canvas id="priceChart" width="240" height="160" aria-label="Price trend chart for broken washing machines"></canvas>
+            </div>
+
+            <h4 style="font-size:var(--text-sm);margin-bottom:var(--space-3);color:var(--color-text);">Category Trends</h4>
+
+            <div class="trend-item">
+              <span class="trend-name">Washing Machines</span>
+              <span class="trend-change">&pound;8 &rarr; &pound;15 &uarr;</span>
+            </div>
+            <div class="trend-item">
+              <span class="trend-name">Pallets (per 10)</span>
+              <span class="trend-change">&pound;20 &rarr; &pound;28 &uarr;</span>
+            </div>
+            <div class="trend-item">
+              <span class="trend-name">Old Sofas</span>
+              <span class="trend-change">&pound;12 &rarr; &pound;16 &uarr;</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="./assets/logo.jpg" alt="FLY-NO" width="100" height="33">
+          <p>Turning waste into worth. The peer-to-peer marketplace that prevents fly-tipping through circular economy principles.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-group">
+            <h4>Marketplace</h4>
+            <a href="sell.html">Sell</a>
+            <a href="buy.html">Buy</a>
+            <a href="drive.html">Drive for FLY-NO</a>
+          </div>
+          <div class="footer-links-group">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 FLY-NO. Turning waste into worth.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+  <script>
+    // Chart.js price trend chart
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctx = document.getElementById('priceChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+
+      // Detect dark mode
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (!document.documentElement.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+      const textColor = isDark ? '#9CA3AF' : '#6B7280';
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Dec', 'Jan', 'Feb', 'Mar'],
+          datasets: [{
+            label: 'Price (£)',
+            data: [8, 10, 12, 15],
+            borderColor: '#2EA94F',
+            backgroundColor: function(context) {
+              const chart = context.chart;
+              const {ctx: c, chartArea} = chart;
+              if (!chartArea) return 'rgba(46, 169, 79, 0.1)';
+              const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+              gradient.addColorStop(0, 'rgba(46, 169, 79, 0.25)');
+              gradient.addColorStop(1, 'rgba(46, 169, 79, 0.02)');
+              return gradient;
+            },
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#2EA94F',
+            pointBorderColor: '#FFFFFF',
+            pointBorderWidth: 2,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            borderWidth: 3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: isDark ? '#2A2C32' : '#2B2D33',
+              titleColor: '#FFFFFF',
+              bodyColor: '#FFFFFF',
+              borderColor: '#2EA94F',
+              borderWidth: 1,
+              cornerRadius: 8,
+              padding: 10,
+              callbacks: {
+                label: function(context) {
+                  return '£' + context.parsed.y;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: textColor, font: { family: 'Inter', size: 11 } }
+            },
+            y: {
+              min: 0,
+              max: 20,
+              grid: { color: gridColor },
+              ticks: {
+                color: textColor,
+                font: { family: 'Inter', size: 11 },
+                callback: function(value) { return '£' + value; }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

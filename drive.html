@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLY-NO — Drive for FLY-NO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./pages.css">
+</head>
+<body>
+  <a href="#main" class="sr-only" style="position:absolute;top:0;left:0;z-index:999;padding:1rem;background:var(--color-primary);color:white;">Skip to content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="FLY-NO Home">
+        <img src="./assets/logo.jpg" alt="FLY-NO logo" width="120" height="40">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="drive.html" class="active">Drive</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button data-theme-toggle aria-label="Switch to dark mode" class="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="sell.html">Sell</a>
+    <a href="buy.html">Buy</a>
+    <a href="drive.html">Drive</a>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Flexible Student Work &mdash; Drive for FLY-NO</h1>
+        <p>Choose your hours. Pick up waste. Get paid the same day.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="drive-layout">
+          <!-- LEFT TOP: Available Jobs -->
+          <div class="card reveal">
+            <div class="drive-section-label">Available Jobs</div>
+            <div class="jobs-split">
+              <!-- Map Mockup -->
+              <div class="map-mockup" aria-label="Map showing available jobs around Exeter and Devon">
+                <div class="map-pin" style="top:18%;left:30%;">Sofa &pound;18</div>
+                <div class="map-pin" style="top:42%;left:55%;">Fridge &pound;12</div>
+                <div class="map-pin" style="top:65%;left:25%;">Pallets &pound;22</div>
+                <div class="map-pin" style="top:35%;left:60%;">Washer &pound;15</div>
+                <span class="map-label">Exeter &amp; Devon Area</span>
+              </div>
+
+              <!-- Job Cards -->
+              <div class="job-cards">
+                <div class="job-card">
+                  <div class="job-card-info">
+                    <h4>Broken Sofa</h4>
+                    <p class="route">EX1 2LU &rarr; TQ12 4AA</p>
+                  </div>
+                  <div class="job-card-right">
+                    <div class="distance">12 mi</div>
+                    <div class="price">&pound;18</div>
+                    <button class="btn btn-accept">Accept</button>
+                  </div>
+                </div>
+                <div class="job-card">
+                  <div class="job-card-info">
+                    <h4>Old Fridge</h4>
+                    <p class="route">EX4 6TL &rarr; EX2 5WT</p>
+                  </div>
+                  <div class="job-card-right">
+                    <div class="distance">4 mi</div>
+                    <div class="price">&pound;8</div>
+                    <button class="btn btn-accept">Accept</button>
+                  </div>
+                </div>
+                <div class="job-card">
+                  <div class="job-card-info">
+                    <h4>Pallets (x10)</h4>
+                    <p class="route">EX1 1SR &rarr; EX6 7NR</p>
+                  </div>
+                  <div class="job-card-right">
+                    <div class="distance">8 mi</div>
+                    <div class="price">&pound;14</div>
+                    <button class="btn btn-accept">Accept</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT TOP: Active Job -->
+          <div class="card active-job-card reveal">
+            <div class="drive-section-label">Active Job</div>
+            <span class="in-progress-badge">IN PROGRESS</span>
+
+            <!-- Route Map -->
+            <div class="route-map" aria-label="Route map showing pickup to drop-off">
+              <div class="route-line">
+                <div class="route-point">Pickup: EX1 2LU</div>
+                <div class="route-dotted"></div>
+                <div class="route-point">Drop: TQ12 4AA</div>
+              </div>
+              <span class="route-distance">12 miles</span>
+            </div>
+
+            <h4 style="margin-bottom:var(--space-2);">Pickup: Broken Sofa</h4>
+            <p class="text-muted text-sm" style="margin-bottom:var(--space-1);">From: 14 High Street, Exeter, EX1 2LU</p>
+            <p class="text-muted text-sm" style="margin-bottom:var(--space-4);">To: 22 Station Road, Newton Abbot, TQ12 4AA</p>
+
+            <div class="nav-text">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              Turn left on High Street in 0.3 miles
+            </div>
+
+            <div class="call-buttons" style="margin-top:var(--space-4);">
+              <button class="btn btn-outline btn-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call Seller
+              </button>
+              <button class="btn btn-outline btn-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call Buyer
+              </button>
+            </div>
+          </div>
+
+          <!-- BOTTOM LEFT: Proof of Delivery -->
+          <div class="card delivery-proof reveal">
+            <div class="drive-section-label">Proof of Delivery</div>
+            <div class="camera-zone" aria-label="Upload delivery photo">
+              <div class="camera-zone-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+              </div>
+              <p style="font-weight:500;color:var(--color-text);font-size:var(--text-sm);">Take photo of item delivered</p>
+              <p style="font-size:var(--text-xs);color:var(--color-text-muted);">Tap to open camera</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%;">Confirm Delivery</button>
+            <div class="payment-note">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Payment released instantly to your FLY-NO wallet
+            </div>
+          </div>
+
+          <!-- BOTTOM RIGHT: Earnings Summary -->
+          <div class="card reveal">
+            <div class="drive-section-label">Earnings Summary</div>
+            <div class="earnings-grid">
+              <div class="earning-card">
+                <div class="amount">&pound;85</div>
+                <div class="period">This Week</div>
+                <div class="deliveries">7 deliveries</div>
+              </div>
+              <div class="earning-card highlight">
+                <div class="amount">&pound;340</div>
+                <div class="period">This Month</div>
+                <div class="deliveries">23 deliveries</div>
+              </div>
+              <div class="earning-card">
+                <div class="amount">&pound;1,240</div>
+                <div class="period">All Time</div>
+                <div class="deliveries">89 deliveries</div>
+              </div>
+            </div>
+
+            <div class="rating-info">
+              <div class="rating-stars" aria-label="Rating 4.8 out of 5">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <div class="rating-value">Driver Rating: 4.8 / 5.0</div>
+              <div class="rating-meta">98% on-time delivery &bull; Top 10% in Devon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="./assets/logo.jpg" alt="FLY-NO" width="100" height="33">
+          <p>Turning waste into worth. The peer-to-peer marketplace that prevents fly-tipping through circular economy principles.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-group">
+            <h4>Marketplace</h4>
+            <a href="sell.html">Sell</a>
+            <a href="buy.html">Buy</a>
+            <a href="drive.html">Drive for FLY-NO</a>
+          </div>
+          <div class="footer-links-group">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 FLY-NO. Turning waste into worth.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
