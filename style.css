@@ -241,6 +241,7 @@ a:hover { color: var(--color-primary-hover); }
 .navbar-logo img {
   height: 40px;
   width: auto;
+  object-fit: contain;
 }
 .nav-links {
   display: flex;
@@ -341,8 +342,10 @@ a:hover { color: var(--color-primary-hover); }
 }
 .footer-brand img {
   height: 36px;
+  width: auto;
   margin-bottom: var(--space-3);
   filter: brightness(0) invert(1);
+  object-fit: contain;
 }
 .footer-brand p {
   color: #9CA3AF;
