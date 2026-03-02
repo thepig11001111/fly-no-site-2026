@@ -149,9 +149,6 @@
   margin-bottom: var(--space-2);
   font-variant-numeric: tabular-nums lining-nums;
 }
-[data-theme="dark"] .stat-value {
-  color: var(--color-primary);
-}
 .stat-label {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
@@ -231,9 +228,6 @@
   font-weight: 700;
   color: #0A6E38;
 }
-[data-theme="dark"] .valuation-card .big-price {
-  color: var(--color-primary);
-}
 .valuation-card .comparison {
   display: flex;
   gap: var(--space-4);
@@ -254,16 +248,10 @@
   background: var(--color-success-highlight);
   color: #065F46;
 }
-[data-theme="dark"] .comparison .flyno {
-  color: var(--color-success);
-}
 .savings-text {
   color: #0A6E38;
   font-weight: 600;
   font-size: var(--text-sm);
-}
-[data-theme="dark"] .savings-text {
-  color: var(--color-primary);
 }
 
 /* Calendar mockup */
@@ -514,9 +502,6 @@ input[type="range"] {
   justify-content: center;
   position: relative;
 }
-[data-theme="dark"] .product-img {
-  background: var(--color-surface-offset);
-}
 .product-img svg { color: var(--color-text-faint); }
 .product-badge {
   position: absolute;
@@ -577,7 +562,6 @@ input[type="range"] {
 }
 .trend-item .trend-name { color: var(--color-text); font-weight: 500; }
 .trend-item .trend-change { color: #0A6E38; font-weight: 600; }
-[data-theme="dark"] .trend-item .trend-change { color: var(--color-primary); }
 .pricing-note {
   margin-top: var(--space-4);
   padding: var(--space-3);
@@ -625,9 +609,6 @@ input[type="range"] {
   position: relative;
   min-height: 200px;
   overflow: hidden;
-}
-[data-theme="dark"] .map-mockup {
-  background: linear-gradient(135deg, #1E3A2A, #2A4A35);
 }
 .map-mockup .map-label {
   font-size: var(--text-xs);
@@ -725,9 +706,6 @@ input[type="range"] {
   align-items: center;
   justify-content: center;
 }
-[data-theme="dark"] .route-map {
-  background: linear-gradient(135deg, #1E3A2A, #2A4A35);
-}
 .route-line {
   display: flex;
   align-items: center;
@@ -743,9 +721,6 @@ input[type="range"] {
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
   white-space: nowrap;
-}
-[data-theme="dark"] .route-point {
-  color: var(--color-primary);
 }
 .route-dotted {
   flex: 1;

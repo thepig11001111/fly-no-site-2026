@@ -27,14 +27,9 @@
         <li><a href="buy.html" class="active">Buy</a></li>
         <li><a href="drive.html">Drive</a></li>
       </ul>
-      <div style="display:flex;align-items:center;gap:var(--space-2);">
-        <button data-theme-toggle aria-label="Switch to dark mode" class="theme-toggle">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
   <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
@@ -257,12 +252,8 @@
       const ctx = document.getElementById('priceChart');
       if (!ctx || typeof Chart === 'undefined') return;
 
-      // Detect dark mode
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
-        (!document.documentElement.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-      const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
-      const textColor = isDark ? '#9CA3AF' : '#6B7280';
+      const gridColor = 'rgba(0,0,0,0.06)';
+      const textColor = '#6B7280';
 
       new Chart(ctx, {
         type: 'line',
@@ -297,7 +288,7 @@
           plugins: {
             legend: { display: false },
             tooltip: {
-              backgroundColor: isDark ? '#2A2C32' : '#2B2D33',
+              backgroundColor: '#2B2D33',
               titleColor: '#FFFFFF',
               bodyColor: '#FFFFFF',
               borderColor: '#2EA94F',
