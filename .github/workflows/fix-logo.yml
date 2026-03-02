@@ -1,0 +1,44 @@
+name: Fix Logo Image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  fix-logo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check if logo needs fixing
+        id: check
+        run: |
+          SIZE=$(wc -c < assets/logo.jpg 2>/dev/null || echo 0)
+          echo "Current logo size: $SIZE bytes"
+          if [ "$SIZE" -lt 100000 ]; then
+            echo "Logo is corrupted or missing (size: $SIZE). Will fix."
+            echo "needs_fix=true" >> $GITHUB_OUTPUT
+          else
+            echo "Logo looks correct (size: $SIZE bytes). Skipping."
+            echo "needs_fix=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Download correct logo binary
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          curl -L -o assets/logo.jpg "https://files.catbox.moe/2w61kh.jpg"
+          echo "Downloaded logo size: $(wc -c < assets/logo.jpg) bytes"
+          file assets/logo.jpg
+
+      - name: Commit and push fixed logo
+        if: steps.check.outputs.needs_fix == 'true'
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add assets/logo.jpg
+          git commit -m "Fix: Replace corrupted logo with correct binary JPEG [skip ci]"
+          git push
