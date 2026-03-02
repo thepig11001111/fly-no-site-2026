@@ -344,7 +344,7 @@ a:hover { color: var(--color-primary-hover); }
   height: 36px;
   width: auto;
   margin-bottom: var(--space-3);
-  filter: brightness(0) invert(1);
+  border-radius: 8px;
   object-fit: contain;
 }
 .footer-brand p {
